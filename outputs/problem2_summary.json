@@ -1,0 +1,16 @@
+{
+  "metrics": {
+    "auc": 0.8181818181818181,
+    "accuracy": 0.78
+  },
+  "thresholds": {
+    "low_cut": 0.7817315007060363,
+    "high_cut": 0.9817315007060363
+  },
+  "risk_counts": {
+    "medium": 709,
+    "low": 169,
+    "high": 122
+  },
+  "cart_rules": "|--- tg <= 1.69\n|   |--- tc <= 6.19\n|   |   |--- class: 0\n|   |--- tc >  6.19\n|   |   |--- class: 1\n|--- tg >  1.69\n|   |--- class: 1\n"
+}

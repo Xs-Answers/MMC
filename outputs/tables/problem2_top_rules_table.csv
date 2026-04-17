@@ -1,0 +1,11 @@
+﻿antecedents,consequents,support,confidence,lift
+frozenset({'risk_high'}),"frozenset({'risk_medium_or_high', 'tg_high', 'phlegm_high'})",0.07,0.5737704918032788,8.196721311475411
+frozenset({'risk_high'}),"frozenset({'risk_medium_or_high', 'tc_high', 'phlegm_high'})",0.064,0.5245901639344263,8.196721311475411
+"frozenset({'tg_high', 'phlegm_high'})",frozenset({'risk_high'}),0.07,1.0,8.19672131147541
+"frozenset({'risk_medium_or_high', 'tg_high', 'phlegm_high'})",frozenset({'risk_high'}),0.07,1.0,8.19672131147541
+"frozenset({'tg_high', 'phlegm_high'})","frozenset({'risk_medium_or_high', 'risk_high'})",0.07,1.0,8.19672131147541
+"frozenset({'tc_high', 'phlegm_high'})",frozenset({'risk_high'}),0.064,1.0,8.19672131147541
+"frozenset({'risk_medium_or_high', 'tc_high', 'phlegm_high'})",frozenset({'risk_high'}),0.064,1.0,8.19672131147541
+"frozenset({'tc_high', 'phlegm_high'})","frozenset({'risk_medium_or_high', 'risk_high'})",0.064,1.0,8.19672131147541
+"frozenset({'tg_high', 'risk_high'})","frozenset({'risk_medium_or_high', 'phlegm_high'})",0.07,0.9090909090909092,6.269592476489029
+frozenset({'risk_high'}),"frozenset({'risk_medium_or_high', 'phlegm_high'})",0.11,0.9016393442622952,6.2182023742227255

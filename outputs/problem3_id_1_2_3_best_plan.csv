@@ -1,0 +1,4 @@
+﻿sample_id,age_group,activity_total,baseline_score,target_score,intensity,frequency,final_score,total_cost,meets_target
+1,2,38.0,64.0,57.6,1,10,47.04588099999999,1050.0,True
+2,1,40.0,58.0,52.2,1,7,51.378858090112,684.0,True
+3,1,63.0,59.0,53.1,1,7,52.264700470976,734.0,True

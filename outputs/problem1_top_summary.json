@@ -1,0 +1,24 @@
+{
+  "top_features": [
+    "tg",
+    "tc",
+    "uric_acid",
+    "ldl",
+    "hdl",
+    "adl_eat",
+    "iadl_cook",
+    "adl_dress",
+    "glucose",
+    "bmi"
+  ],
+  "top_constitution_or": [
+    "qi_deficiency",
+    "balanced",
+    "yang_deficiency"
+  ],
+  "top_constitution_shap": [
+    "blood_stasis",
+    "qi_stagnation",
+    "damp_heat"
+  ]
+}
