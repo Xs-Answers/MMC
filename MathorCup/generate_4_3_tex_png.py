@@ -38,17 +38,17 @@ def draw_line(x1, y1, x2, y2):
     ax.plot([x1, x2], [y1, y2], color='#333333', lw=1.5, zorder=1)
 
 # 1. Title
-ax.text(50, 96, "中年人群高血脂症与痰湿体质综合风险评估流程图", 
-        ha='center', va='center', fontsize=19, fontweight='bold', color="#1a1a1a")
+ax.text(50, 96, "中年人群高血脂症与痰湿及干预综合预警评估流程图", 
+        ha='center', va='center', fontsize=20, fontweight='bold', color="#000000")
 
 # 2. Start
-add_box(35, 87, 30, 5, "初筛：中老年评估及干预体检总人群", facecolor='#f5f5f5', fontsize=13, fontweight='bold')
+add_box(35, 87, 30, 5, "初筛中老年评估及干预体检总人群", facecolor='#ffffff', edgecolor='#000000', boxstyle='square,pad=0', fontsize=12, fontweight='normal')
 
 # 3. Diamond
-diamond = mpatches.Polygon(xy=[(50, 84), (65, 79), (50, 74), (35, 79)], closed=True, 
-                           facecolor='#eef5ff', edgecolor='#333333', lw=1.2, zorder=2)
+diamond = mpatches.Polygon(xy=[(50, 84), (68, 79), (50, 74), (32, 79)], closed=True, 
+                           facecolor='#ffffff', edgecolor='#000000', lw=1.2, zorder=2)
 ax.add_patch(diamond)
-ax.text(50, 79, "是否存在较严重的合并病史？\n(如严重冠心病、缺血性脑卒中等)", ha='center', va='center', fontsize=11, fontweight='bold')
+ax.text(50, 79, "是否发生过相关的危急重症？\n(极严重的冠病、不可逆的躯体衰败)", ha='center', va='center', fontsize=11, fontweight='normal')
 
 draw_arrow(50, 87, 50, 84)
 

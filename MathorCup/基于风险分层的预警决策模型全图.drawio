@@ -1,10 +1,10 @@
 <mxfile host="65bd71144e">
     <diagram id="diagram1" name="Page-1">
-        <mxGraphModel dx="747" dy="601" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1000" math="0" shadow="0">
+        <mxGraphModel dx="507" dy="601" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1000" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="title" value="中老年人群高风险预警与层级评估矩阵图" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;" parent="1" vertex="1">
+                <mxCell id="title" value="面向基层筛查场景的综合风险评估流程示意" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;" parent="1" vertex="1">
                     <mxGeometry x="300" y="20" width="400" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="n_start" value="初筛中老年评估及干预体检总人群" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" parent="1" vertex="1">
@@ -55,22 +55,22 @@
                 <mxCell id="m_wrapper" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
                     <mxGeometry x="140" y="450" width="720" height="280" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_h1" value="痰湿体质积水平分层 (分)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                <mxCell id="m_h1" value="痰湿体质积水平分层 (分)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=2;" parent="1" vertex="1">
                     <mxGeometry x="380" y="420" width="480" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_h2_1" value="核心血脂状态&#xa;分层" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                <mxCell id="m_h2_1" value="核心血脂状态&#xa;分层" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=2;" parent="1" vertex="1">
                     <mxGeometry x="140" y="420" width="100" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_h2_2" value="日常活动受限评分&#xa;(ADL+IADL总量)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                <mxCell id="m_h2_2" value="日常活动受限评分&#xa;(ADL+IADL总量)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=2;" parent="1" vertex="1">
                     <mxGeometry x="240" y="420" width="140" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_h2_3" value="无或轻度痰湿&#xa;(0≤积分&lt;60)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                <mxCell id="m_h2_3" value="无或轻度痰湿&#xa;(0≤积分&lt;60)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=2;" parent="1" vertex="1">
                     <mxGeometry x="380" y="450" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_h2_4" value="中度痰湿失常&#xa;(60≤积分&lt;80)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                <mxCell id="m_h2_4" value="中度痰湿失常&#xa;(60≤积分&lt;80)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=2;" parent="1" vertex="1">
                     <mxGeometry x="540" y="450" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_h2_5" value="重度痰湿预警&#xa;(≥80分)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                <mxCell id="m_h2_5" value="重度痰湿预警&#xa;(≥80分)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#f2f2f2;fontColor=#000000;fontStyle=1;align=center;verticalAlign=middle;strokeWidth=2;" parent="1" vertex="1">
                     <mxGeometry x="700" y="450" width="160" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="m_row1_1" value="尚未出现&lt;br&gt;血脂异常&lt;br&gt;(A = 0)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#ffffff;fontColor=#000000;align=center;verticalAlign=middle;fillColor=#f9fbf8;" parent="1" vertex="1">
@@ -96,6 +96,24 @@
                 </mxCell>
                 <mxCell id="act2_2" value="显著活动受限&#xa;(分数&lt;40)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fillColor=#ffffff;fontColor=#000000;align=center;verticalAlign=middle;" parent="1" vertex="1">
                     <mxGeometry x="240" y="690" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="risk_low1" value="低风险" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#82b366;fillColor=#d5e8d4;fontStyle=1;fontSize=14;letterSpacing=2;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="490" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="risk_med1" value="中风险" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fontColor=#000000;fillColor=#ffe6cc;fontStyle=1;fontSize=14;letterSpacing=2;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="490" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="risk_med1_2" value="中风险" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fontColor=#000000;fillColor=#ffe6cc;fontStyle=1;fontSize=14;letterSpacing=2;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="490" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="risk_high1" value="高风险" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fontColor=#000000;fillColor=#f8cecc;fontStyle=1;fontSize=14;letterSpacing=2;" vertex="1" parent="1">
+                    <mxGeometry x="700" y="570" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="risk_med2" value="中风险" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fontColor=#000000;fillColor=#ffe6cc;fontStyle=1;fontSize=14;letterSpacing=2;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="610" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="risk_high2" value="高风险" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#666666;fontColor=#000000;fillColor=#f8cecc;fontStyle=1;fontSize=14;letterSpacing=2;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="610" width="320" height="120" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
