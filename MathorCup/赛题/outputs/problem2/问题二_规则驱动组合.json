@@ -1,0 +1,10 @@
+{
+  "size": 2,
+  "pattern_key": "lipid_abnormal|phlegm_high",
+  "pattern_label": "lipid_abnormal + phlegm_high",
+  "count_all": 110,
+  "count_high": 110,
+  "confidence": 1.0,
+  "lift": 1.5408320493066254,
+  "support_high": 0.1694915254237288
+}

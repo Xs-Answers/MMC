@@ -1,0 +1,85 @@
+﻿size,pattern_key,pattern_label,count_all,count_high,confidence,lift,support_high
+2,lipid_abnormal|activity_low,lipid_abnormal + activity_low,648,521,0.8040123456790124,1.2388479902604197,0.802773497688752
+2,lipid_abnormal|uric_high,lipid_abnormal + uric_high,444,421,0.9481981981981982,1.4610141728785795,0.6486902927580893
+2,uric_high|activity_low,uric_high + activity_low,362,342,0.9447513812154696,1.4557032068034972,0.5269645608628659
+2,lipid_abnormal|drink_yes,lipid_abnormal + drink_yes,406,324,0.7980295566502463,1.2296295171806568,0.49922958397534667
+2,lipid_abnormal|smoke_yes,lipid_abnormal + smoke_yes,384,307,0.7994791666666666,1.231863122752953,0.47303543913713403
+2,drink_yes|activity_low,drink_yes + activity_low,435,264,0.6068965517241379,0.9351256575102279,0.4067796610169492
+2,smoke_yes|activity_low,smoke_yes + activity_low,407,253,0.6216216216216216,0.957814517136551,0.3898305084745763
+2,uric_high|drink_yes,uric_high + drink_yes,221,209,0.9457013574660633,1.4571669606564919,0.3220338983050847
+2,uric_high|smoke_yes,uric_high + smoke_yes,216,203,0.9398148148148148,1.4480967870798378,0.31278890600924497
+2,smoke_yes|drink_yes,smoke_yes + drink_yes,278,169,0.6079136690647482,0.9366928645065458,0.26040061633281975
+2,lipid_abnormal|bmi_high,lipid_abnormal + bmi_high,184,149,0.8097826086956522,1.247738996449387,0.2295839753466872
+2,bmi_high|activity_low,bmi_high + activity_low,198,121,0.6111111111111112,0.9416195856873824,0.1864406779661017
+2,lipid_abnormal|phlegm_high,lipid_abnormal + phlegm_high,110,110,1.0,1.5408320493066254,0.1694915254237288
+2,phlegm_high|activity_low,phlegm_high + activity_low,122,94,0.7704918032786885,1.187198464219859,0.1448382126348228
+2,uric_high|bmi_high,uric_high + bmi_high,100,93,0.93,1.4329738058551618,0.14329738058551617
+2,bmi_high|drink_yes,bmi_high + drink_yes,136,80,0.5882352941176471,0.9063717937097797,0.12326656394453005
+2,lipid_abnormal|glucose_high,lipid_abnormal + glucose_high,105,76,0.7238095238095238,1.1152689118790813,0.11710323574730354
+2,bmi_high|smoke_yes,bmi_high + smoke_yes,113,70,0.6194690265486725,0.9544977296589715,0.10785824345146379
+2,glucose_high|activity_low,glucose_high + activity_low,109,64,0.5871559633027523,0.9047087261983857,0.09861325115562404
+2,uric_high|phlegm_high,uric_high + phlegm_high,59,59,1.0,1.5408320493066254,0.09090909090909091
+2,drink_yes|phlegm_high,drink_yes + phlegm_high,73,58,0.7945205479452054,1.224222724106634,0.08936825885978428
+2,uric_high|glucose_high,uric_high + glucose_high,58,54,0.9310344827586207,1.4345677700440995,0.08320493066255778
+2,smoke_yes|phlegm_high,smoke_yes + phlegm_high,71,54,0.7605633802816901,1.171900431867011,0.08320493066255778
+2,glucose_high|drink_yes,glucose_high + drink_yes,74,42,0.5675675675675675,0.8745262982551117,0.06471494607087827
+2,glucose_high|smoke_yes,glucose_high + smoke_yes,76,38,0.5,0.7704160246533127,0.05855161787365177
+2,bmi_high|phlegm_high,bmi_high + phlegm_high,31,23,0.7419354838709677,1.143197972066206,0.03543913713405239
+2,glucose_high|bmi_high,glucose_high + bmi_high,31,19,0.6129032258064516,0.9443809334459963,0.029275808936825885
+2,glucose_high|phlegm_high,glucose_high + phlegm_high,21,18,0.8571428571428571,1.3207131851199647,0.02773497688751926
+3,lipid_abnormal|uric_high|activity_low,lipid_abnormal + uric_high + activity_low,362,342,0.9447513812154696,1.4557032068034972,0.5269645608628659
+3,lipid_abnormal|drink_yes|activity_low,lipid_abnormal + drink_yes + activity_low,336,262,0.7797619047619048,1.2014821336855235,0.4036979969183359
+3,lipid_abnormal|smoke_yes|activity_low,lipid_abnormal + smoke_yes + activity_low,313,252,0.805111821086262,1.2405420972053343,0.3882896764252696
+3,lipid_abnormal|uric_high|drink_yes,lipid_abnormal + uric_high + drink_yes,221,209,0.9457013574660633,1.4571669606564919,0.3220338983050847
+3,lipid_abnormal|uric_high|smoke_yes,lipid_abnormal + uric_high + smoke_yes,216,203,0.9398148148148148,1.4480967870798378,0.31278890600924497
+3,uric_high|drink_yes|activity_low,uric_high + drink_yes + activity_low,182,171,0.9395604395604396,1.4477048375353458,0.26348228043143296
+3,uric_high|smoke_yes|activity_low,uric_high + smoke_yes + activity_low,183,171,0.9344262295081968,1.439793882138978,0.26348228043143296
+3,lipid_abnormal|smoke_yes|drink_yes,lipid_abnormal + smoke_yes + drink_yes,214,168,0.7850467289719626,1.209625160203332,0.2588597842835131
+3,smoke_yes|drink_yes|activity_low,smoke_yes + drink_yes + activity_low,232,142,0.6120689655172413,0.9430954784549173,0.21879815100154082
+3,lipid_abnormal|bmi_high|activity_low,lipid_abnormal + bmi_high + activity_low,152,121,0.7960526315789473,1.2265834076717217,0.1864406779661017
+3,uric_high|smoke_yes|drink_yes,uric_high + smoke_yes + drink_yes,121,113,0.9338842975206612,1.4389588559640387,0.17411402157164868
+3,lipid_abnormal|phlegm_high|activity_low,lipid_abnormal + phlegm_high + activity_low,93,93,1.0,1.5408320493066254,0.14329738058551617
+3,lipid_abnormal|uric_high|bmi_high,lipid_abnormal + uric_high + bmi_high,100,93,0.93,1.4329738058551618,0.14329738058551617
+3,lipid_abnormal|bmi_high|drink_yes,lipid_abnormal + bmi_high + drink_yes,103,80,0.7766990291262136,1.1967627567430101,0.12326656394453005
+3,uric_high|bmi_high|activity_low,uric_high + bmi_high + activity_low,80,74,0.925,1.4252696456086287,0.1140215716486903
+3,lipid_abnormal|bmi_high|smoke_yes,lipid_abnormal + bmi_high + smoke_yes,85,70,0.8235294117647058,1.2689205111936916,0.10785824345146379
+3,bmi_high|drink_yes|activity_low,bmi_high + drink_yes + activity_low,114,64,0.5614035087719298,0.8650285189089827,0.09861325115562404
+3,lipid_abnormal|glucose_high|activity_low,lipid_abnormal + glucose_high + activity_low,86,63,0.7325581395348837,1.1287490593757838,0.0970724191063174
+3,lipid_abnormal|uric_high|phlegm_high,lipid_abnormal + uric_high + phlegm_high,59,59,1.0,1.5408320493066254,0.09090909090909091
+3,lipid_abnormal|drink_yes|phlegm_high,lipid_abnormal + drink_yes + phlegm_high,56,56,1.0,1.5408320493066254,0.08628659476117104
+3,bmi_high|smoke_yes|activity_low,bmi_high + smoke_yes + activity_low,93,56,0.6021505376344086,0.9278128468943122,0.08628659476117104
+3,lipid_abnormal|uric_high|glucose_high,lipid_abnormal + uric_high + glucose_high,58,54,0.9310344827586207,1.4345677700440995,0.08320493066255778
+3,lipid_abnormal|smoke_yes|phlegm_high,lipid_abnormal + smoke_yes + phlegm_high,52,52,1.0,1.5408320493066254,0.08012326656394453
+3,uric_high|phlegm_high|activity_low,uric_high + phlegm_high + activity_low,51,51,1.0,1.5408320493066254,0.07858243451463791
+3,uric_high|bmi_high|drink_yes,uric_high + bmi_high + drink_yes,55,50,0.9090909090909091,1.4007564084605686,0.07704160246533127
+3,drink_yes|phlegm_high|activity_low,drink_yes + phlegm_high + activity_low,60,47,0.7833333333333333,1.2069851052901899,0.0724191063174114
+3,uric_high|bmi_high|smoke_yes,uric_high + bmi_high + smoke_yes,48,45,0.9375,1.4445300462249615,0.06933744221879815
+3,smoke_yes|phlegm_high|activity_low,smoke_yes + phlegm_high + activity_low,59,45,0.7627118644067796,1.1752108850643754,0.06933744221879815
+3,uric_high|glucose_high|activity_low,uric_high + glucose_high + activity_low,48,44,0.9166666666666666,1.4124293785310733,0.06779661016949153
+3,bmi_high|smoke_yes|drink_yes,bmi_high + smoke_yes + drink_yes,73,42,0.5753424657534246,0.8865061105599763,0.06471494607087827
+3,lipid_abnormal|glucose_high|drink_yes,lipid_abnormal + glucose_high + drink_yes,54,40,0.7407407407407407,1.1413570735604632,0.061633281972265024
+3,lipid_abnormal|glucose_high|smoke_yes,lipid_abnormal + glucose_high + smoke_yes,60,38,0.6333333333333333,0.9758602978941961,0.05855161787365177
+3,glucose_high|drink_yes|activity_low,glucose_high + drink_yes + activity_low,62,36,0.5806451612903226,0.894676673790944,0.05546995377503852
+3,glucose_high|smoke_yes|activity_low,glucose_high + smoke_yes + activity_low,64,34,0.53125,0.8185670261941448,0.05238828967642527
+3,uric_high|drink_yes|phlegm_high,uric_high + drink_yes + phlegm_high,31,31,1.0,1.5408320493066254,0.04776579352850539
+3,smoke_yes|drink_yes|phlegm_high,smoke_yes + drink_yes + phlegm_high,40,31,0.775,1.1941448382126347,0.04776579352850539
+3,uric_high|smoke_yes|phlegm_high,uric_high + smoke_yes + phlegm_high,29,29,1.0,1.5408320493066254,0.04468412942989214
+3,uric_high|glucose_high|smoke_yes,uric_high + glucose_high + smoke_yes,33,29,0.8787878787878788,1.3540645281785497,0.04468412942989214
+3,uric_high|glucose_high|drink_yes,uric_high + glucose_high + drink_yes,27,25,0.9259259259259259,1.4266963419505791,0.03852080123266564
+3,lipid_abnormal|bmi_high|phlegm_high,lipid_abnormal + bmi_high + phlegm_high,23,23,1.0,1.5408320493066254,0.03543913713405239
+3,glucose_high|smoke_yes|drink_yes,glucose_high + smoke_yes + drink_yes,43,20,0.46511627906976744,0.716666069444942,0.030816640986132512
+3,lipid_abnormal|glucose_high|bmi_high,lipid_abnormal + glucose_high + bmi_high,23,19,0.8260869565217391,1.2728612581228647,0.029275808936825885
+3,bmi_high|phlegm_high|activity_low,bmi_high + phlegm_high + activity_low,27,19,0.7037037037037037,1.0842892198824403,0.029275808936825885
+3,lipid_abnormal|glucose_high|phlegm_high,lipid_abnormal + glucose_high + phlegm_high,17,17,1.0,1.5408320493066254,0.026194144838212634
+3,glucose_high|bmi_high|activity_low,glucose_high + bmi_high + activity_low,27,17,0.6296296296296297,0.9701535125263939,0.026194144838212634
+3,glucose_high|phlegm_high|activity_low,glucose_high + phlegm_high + activity_low,19,16,0.8421052631578947,1.297542778363474,0.02465331278890601
+3,bmi_high|smoke_yes|phlegm_high,bmi_high + smoke_yes + phlegm_high,20,15,0.75,1.155624036979969,0.023112480739599383
+3,uric_high|bmi_high|phlegm_high,uric_high + bmi_high + phlegm_high,13,13,1.0,1.5408320493066254,0.020030816640986132
+3,glucose_high|bmi_high|drink_yes,glucose_high + bmi_high + drink_yes,21,13,0.6190476190476191,0.9538484114755301,0.020030816640986132
+3,uric_high|glucose_high|phlegm_high,uric_high + glucose_high + phlegm_high,12,12,1.0,1.5408320493066254,0.01848998459167951
+3,uric_high|glucose_high|bmi_high,uric_high + glucose_high + bmi_high,11,11,1.0,1.5408320493066254,0.01694915254237288
+3,bmi_high|drink_yes|phlegm_high,bmi_high + drink_yes + phlegm_high,16,11,0.6875,1.0593220338983051,0.01694915254237288
+3,glucose_high|smoke_yes|phlegm_high,glucose_high + smoke_yes + phlegm_high,11,9,0.8181818181818182,1.260680767614512,0.01386748844375963
+3,glucose_high|drink_yes|phlegm_high,glucose_high + drink_yes + phlegm_high,11,9,0.8181818181818182,1.260680767614512,0.01386748844375963
+3,glucose_high|bmi_high|smoke_yes,glucose_high + bmi_high + smoke_yes,18,8,0.4444444444444444,0.684814244136278,0.012326656394453005
+3,glucose_high|bmi_high|phlegm_high,glucose_high + bmi_high + phlegm_high,2,1,0.5,0.7704160246533127,0.0015408320493066256

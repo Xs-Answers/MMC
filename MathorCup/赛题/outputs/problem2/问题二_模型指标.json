@@ -1,0 +1,18 @@
+{
+  "diagnostic_auc": 1.0,
+  "diagnostic_acc": 0.984,
+  "early_warning_auc": 0.8282828282828283,
+  "early_warning_acc": 0.78,
+  "high_risk_base_rate": 0.649,
+  "winsor_lower_q": 0.01,
+  "winsor_upper_q": 0.99,
+  "winsor_columns": [
+    "hdl",
+    "ldl",
+    "tg",
+    "tc",
+    "glucose",
+    "uric_acid",
+    "bmi"
+  ]
+}

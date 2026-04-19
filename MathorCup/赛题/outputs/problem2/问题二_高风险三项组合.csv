@@ -1,0 +1,6 @@
+﻿size,pattern_key,pattern_label,count_all,count_high,confidence,lift,support_high
+3,lipid_abnormal|uric_high|activity_low,lipid_abnormal + uric_high + activity_low,362,342,0.9447513812154696,1.4557032068034972,0.5269645608628659
+3,lipid_abnormal|drink_yes|activity_low,lipid_abnormal + drink_yes + activity_low,336,262,0.7797619047619048,1.2014821336855235,0.4036979969183359
+3,lipid_abnormal|smoke_yes|activity_low,lipid_abnormal + smoke_yes + activity_low,313,252,0.805111821086262,1.2405420972053343,0.3882896764252696
+3,lipid_abnormal|uric_high|drink_yes,lipid_abnormal + uric_high + drink_yes,221,209,0.9457013574660633,1.4571669606564919,0.3220338983050847
+3,lipid_abnormal|uric_high|smoke_yes,lipid_abnormal + uric_high + smoke_yes,216,203,0.9398148148148148,1.4480967870798378,0.31278890600924497

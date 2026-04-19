@@ -1,0 +1,13 @@
+{
+  "workbook": "D:\\竞赛\\MathorCup\\赛题\\C题\\附件1：样例数据.xlsx",
+  "total_rows": 1000,
+  "total_cols": 37,
+  "missing_total": 0,
+  "duplicate_rows": 0,
+  "duplicate_sample_ids": 0,
+  "adl_total_match": 1000,
+  "iadl_total_match": 1000,
+  "activity_total_match": 1000,
+  "subtype_consistent": 1000,
+  "raw_constitution_tag_match": 935
+}

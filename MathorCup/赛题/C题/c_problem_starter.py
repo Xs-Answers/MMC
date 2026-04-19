@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import argparse
+import json
+import shutil
 from dataclasses import dataclass
 from itertools import combinations
 from pathlib import Path
@@ -203,12 +205,30 @@ class PlanResult:
     activity_total: float
     baseline_score: float
     target_score: float
-    intensity: int
-    frequency: int
     final_score: float
     total_cost: float
     meets_target: bool
-    monthly_records: list[tuple[int, int, float, float, float]]
+    monthly_records: list["MonthlyRecord"]
+
+
+@dataclass(frozen=True)
+class MonthlyAction:
+    intensity: int
+    frequency: int
+    drop_pct: int
+    train_cost: int
+
+
+@dataclass(frozen=True)
+class MonthlyRecord:
+    month: int
+    intensity: int
+    frequency: int
+    tcm_level: int
+    start_score: float
+    end_score: float
+    tcm_cost: float
+    train_cost: float
 
 
 @dataclass
@@ -732,24 +752,66 @@ def activity_monthly_drop(intensity: int, frequency: int) -> float:
     return 0.03 * (intensity - 1) + 0.01 * (frequency - 5)
 
 
-def simulate_plan(
+def monthly_train_cost(intensity: int, frequency: int) -> int:
+    return int(TRAIN_UNIT_COST[intensity] * frequency * 4)
+
+
+def available_monthly_actions(age_group: int, activity_total: float) -> list[MonthlyAction]:
+    best_by_drop: dict[int, MonthlyAction] = {}
+    for intensity in allowed_intensities(age_group, activity_total):
+        for frequency in range(1, 11):
+            drop_pct = int(round(activity_monthly_drop(intensity, frequency) * 100))
+            candidate = MonthlyAction(
+                intensity=intensity,
+                frequency=frequency,
+                drop_pct=drop_pct,
+                train_cost=monthly_train_cost(intensity, frequency),
+            )
+            current = best_by_drop.get(drop_pct)
+            if current is None:
+                best_by_drop[drop_pct] = candidate
+                continue
+            if candidate.train_cost < current.train_cost:
+                best_by_drop[drop_pct] = candidate
+                continue
+            if candidate.train_cost == current.train_cost and (
+                candidate.intensity,
+                candidate.frequency,
+            ) < (
+                current.intensity,
+                current.frequency,
+            ):
+                best_by_drop[drop_pct] = candidate
+    return [best_by_drop[key] for key in sorted(best_by_drop)]
+
+
+def simulate_action_sequence(
     baseline_score: float,
-    intensity: int,
-    frequency: int,
-    months: int = 6,
-) -> tuple[float, float, list[tuple[int, int, float, float, float]]]:
+    action_sequence: list[MonthlyAction],
+) -> tuple[float, float, list[MonthlyRecord]]:
     score = float(baseline_score)
     total_cost = 0.0
-    history = []
-    monthly_drop = activity_monthly_drop(intensity, frequency)
+    history: list[MonthlyRecord] = []
 
-    for month in range(1, months + 1):
-        current_tcm_level = tcm_level(score)
+    for month, action in enumerate(action_sequence, start=1):
+        start_score = score
+        current_tcm_level = tcm_level(start_score)
         tcm_cost = TCM_MONTHLY_COST[current_tcm_level]
-        train_cost = TRAIN_UNIT_COST[intensity] * frequency * 4
+        train_cost = float(action.train_cost)
         total_cost += tcm_cost + train_cost
-        score = score * (1 - monthly_drop)
-        history.append((month, current_tcm_level, round(score, 3), tcm_cost, train_cost))
+        score = score * (1 - action.drop_pct / 100.0)
+        history.append(
+            MonthlyRecord(
+                month=month,
+                intensity=action.intensity,
+                frequency=action.frequency,
+                tcm_level=current_tcm_level,
+                start_score=round(start_score, 3),
+                end_score=round(score, 3),
+                tcm_cost=float(tcm_cost),
+                train_cost=train_cost,
+            )
+        )
 
     return score, total_cost, history
 
@@ -764,39 +826,106 @@ def optimize_intervention(
     activity_total = float(row["activity_total"])
     baseline_score = float(row["phlegm_score"])
     target_score = baseline_score * target_ratio
+    months = 6
+    score_scale = 1000
+    inf_cost = 10**9
+    budget_int = int(round(budget))
+    actions = available_monthly_actions(age_group, activity_total)
+    start_idx = int(round(baseline_score * score_scale))
+    target_idx = int(np.floor(target_score * score_scale + 1e-9))
+    state_grid = np.arange(start_idx + 1, dtype=np.int32)
+    tcm_cost_by_state = np.where(
+        state_grid <= 58 * score_scale,
+        TCM_MONTHLY_COST[1],
+        np.where(state_grid <= 61 * score_scale, TCM_MONTHLY_COST[2], TCM_MONTHLY_COST[3]),
+    ).astype(np.int32)
+    next_state_lookup = np.empty((len(actions), start_idx + 1), dtype=np.int32)
+    for action_idx, action in enumerate(actions):
+        next_state_lookup[action_idx] = (
+            state_grid * (100 - action.drop_pct) + 50
+        ) // 100
 
-    candidates = []
-    for intensity in allowed_intensities(age_group, activity_total):
-        for frequency in range(1, 11):
-            final_score, total_cost, history = simulate_plan(
-                baseline_score, intensity, frequency
-            )
-            meets_target = final_score <= target_score and total_cost <= budget
-            candidates.append(
-                PlanResult(
-                    sample_id=sample_id,
-                    age_group=age_group,
-                    activity_total=activity_total,
-                    baseline_score=baseline_score,
-                    target_score=target_score,
-                    intensity=intensity,
-                    frequency=frequency,
-                    final_score=final_score,
-                    total_cost=total_cost,
-                    meets_target=meets_target,
-                    monthly_records=history,
-                )
-            )
+    current_cost = np.full(start_idx + 1, inf_cost, dtype=np.int32)
+    current_cost[start_idx] = 0
+    active_states = np.array([start_idx], dtype=np.int32)
+    parent_states: list[np.ndarray] = []
+    parent_actions: list[np.ndarray] = []
 
-    candidates.sort(
-        key=lambda item: (
-            not item.meets_target,
-            item.total_cost,
-            item.final_score,
-            -item.frequency,
+    for _ in range(months):
+        next_cost = np.full(start_idx + 1, inf_cost, dtype=np.int32)
+        parent_state = np.full(start_idx + 1, -1, dtype=np.int32)
+        parent_action = np.full(start_idx + 1, -1, dtype=np.int16)
+
+        for idx in active_states.tolist():
+            month_base_cost = int(current_cost[idx]) + int(tcm_cost_by_state[idx])
+            for action_idx, action in enumerate(actions):
+                nxt = int(next_state_lookup[action_idx, idx])
+                candidate_cost = month_base_cost + int(action.train_cost)
+                if candidate_cost < next_cost[nxt]:
+                    next_cost[nxt] = candidate_cost
+                    parent_state[nxt] = idx
+                    parent_action[nxt] = action_idx
+
+        parent_states.append(parent_state)
+        parent_actions.append(parent_action)
+        current_cost = next_cost
+        active_states = np.flatnonzero(current_cost < inf_cost).astype(np.int32)
+
+    def reconstruct_actions(final_state: int) -> list[MonthlyAction]:
+        sequence: list[MonthlyAction] = []
+        state = int(final_state)
+        for month in range(months - 1, -1, -1):
+            action_idx = int(parent_actions[month][state])
+            if action_idx < 0:
+                raise ValueError(f"State {final_state} is not reachable in month {month + 1}.")
+            sequence.append(actions[action_idx])
+            state = int(parent_states[month][state])
+        sequence.reverse()
+        return sequence
+
+    def build_result(final_state: int) -> PlanResult:
+        sequence = reconstruct_actions(final_state)
+        final_score, total_cost, history = simulate_action_sequence(baseline_score, sequence)
+        meets_target = final_score <= target_score + 1e-9 and total_cost <= budget + 1e-9
+        return PlanResult(
+            sample_id=sample_id,
+            age_group=age_group,
+            activity_total=activity_total,
+            baseline_score=baseline_score,
+            target_score=target_score,
+            final_score=final_score,
+            total_cost=total_cost,
+            meets_target=meets_target,
+            monthly_records=history,
         )
-    )
-    return candidates[0]
+
+    final_cost = current_cost
+    reachable_states = np.flatnonzero(final_cost < inf_cost).astype(np.int32)
+    target_affordable = [
+        int(idx)
+        for idx in reachable_states
+        if idx <= target_idx and int(final_cost[idx]) <= budget_int
+    ]
+    if target_affordable:
+        ordered_states = sorted(target_affordable, key=lambda idx: (int(final_cost[idx]), idx))
+    else:
+        affordable_states = [
+            int(idx) for idx in reachable_states if int(final_cost[idx]) <= budget_int
+        ]
+        if affordable_states:
+            ordered_states = sorted(affordable_states, key=lambda idx: (idx, int(final_cost[idx])))
+        else:
+            ordered_states = sorted(reachable_states.tolist(), key=lambda idx: (int(final_cost[idx]), idx))
+
+    for final_state in ordered_states:
+        result = build_result(final_state)
+        if target_affordable:
+            if result.meets_target:
+                return result
+            continue
+        return result
+
+    raise RuntimeError("Failed to construct an intervention plan.")
 
 
 def print_problem_1(summary: dict[str, object]) -> None:
@@ -937,21 +1066,290 @@ def print_problem_3(
             continue
 
         result = optimize_intervention(matches.iloc[0], target_ratio=target_ratio, budget=budget)
+        segments = []
+        if result.monthly_records:
+            seg_start = result.monthly_records[0].month
+            seg_action = (
+                result.monthly_records[0].intensity,
+                result.monthly_records[0].frequency,
+            )
+            prev_month = result.monthly_records[0].month
+            for record in result.monthly_records[1:]:
+                action = (record.intensity, record.frequency)
+                if action != seg_action:
+                    label = (
+                        f"M{seg_start}"
+                        if seg_start == prev_month
+                        else f"M{seg_start}-M{prev_month}"
+                    )
+                    segments.append(
+                        f"{label}: intensity={seg_action[0]}, freq={seg_action[1]}/week"
+                    )
+                    seg_start = record.month
+                    seg_action = action
+                prev_month = record.month
+            label = f"M{seg_start}" if seg_start == prev_month else f"M{seg_start}-M{prev_month}"
+            segments.append(f"{label}: intensity={seg_action[0]}, freq={seg_action[1]}/week")
         print(
             f"Sample {sample_id}: baseline={result.baseline_score:.1f}, "
             f"target<={result.target_score:.1f}, activity_total={result.activity_total:.1f}, "
             f"age_group={result.age_group}"
         )
         print(
-            f"  plan: intensity={result.intensity}, frequency={result.frequency}/week, "
+            f"  dynamic plan: {'; '.join(segments)}, "
             f"final={result.final_score:.2f}, cost={result.total_cost:.0f}, "
             f"meets_target={result.meets_target}"
         )
-        for month, level, score, tcm_cost, train_cost in result.monthly_records:
+        for record in result.monthly_records:
             print(
-                f"  month {month}: tcm_level={level}, score={score:.3f}, "
-                f"tcm_cost={tcm_cost:.0f}, train_cost={train_cost:.0f}"
+                f"  month {record.month}: intensity={record.intensity}, "
+                f"freq={record.frequency}/week, tcm_level={record.tcm_level}, "
+                f"start={record.start_score:.3f}, end={record.end_score:.3f}, "
+                f"tcm_cost={record.tcm_cost:.0f}, train_cost={record.train_cost:.0f}"
             )
+
+
+def summarize_plan_segments(result: PlanResult) -> list[dict[str, object]]:
+    segments: list[dict[str, object]] = []
+    if not result.monthly_records:
+        return segments
+
+    seg_start = result.monthly_records[0].month
+    seg_action = (
+        result.monthly_records[0].intensity,
+        result.monthly_records[0].frequency,
+    )
+    prev_month = result.monthly_records[0].month
+    for record in result.monthly_records[1:]:
+        action = (record.intensity, record.frequency)
+        if action != seg_action:
+            segments.append(
+                {
+                    "month_from": seg_start,
+                    "month_to": prev_month,
+                    "intensity": seg_action[0],
+                    "frequency": seg_action[1],
+                    "label": (
+                        f"M{seg_start}"
+                        if seg_start == prev_month
+                        else f"M{seg_start}-M{prev_month}"
+                    ),
+                }
+            )
+            seg_start = record.month
+            seg_action = action
+        prev_month = record.month
+
+    segments.append(
+        {
+            "month_from": seg_start,
+            "month_to": prev_month,
+            "intensity": seg_action[0],
+            "frequency": seg_action[1],
+            "label": f"M{seg_start}" if seg_start == prev_month else f"M{seg_start}-M{prev_month}",
+        }
+    )
+    return segments
+
+
+def collect_problem_3_results(
+    df: "pd.DataFrame",
+    sample_ids: list[int],
+    target_ratio: float,
+    budget: float,
+) -> list[PlanResult]:
+    results: list[PlanResult] = []
+    for sample_id in sample_ids:
+        matches = df[df["sample_id"] == sample_id]
+        if matches.empty:
+            continue
+        results.append(optimize_intervention(matches.iloc[0], target_ratio=target_ratio, budget=budget))
+    return results
+
+
+def export_problem_outputs(
+    workbook: Path,
+    audit: AuditResult,
+    problem_1: dict[str, object],
+    problem_2: dict[str, object],
+    problem_3_results: list[PlanResult],
+    output_root: Path,
+) -> None:
+    output_root.mkdir(parents=True, exist_ok=True)
+    problem1_dir = output_root / "problem1"
+    problem2_dir = output_root / "problem2"
+    problem3_dir = output_root / "problem3"
+    for path in (problem1_dir, problem2_dir, problem3_dir):
+        path.mkdir(parents=True, exist_ok=True)
+
+    audit_payload = {
+        "workbook": str(workbook),
+        "total_rows": audit.total_rows,
+        "total_cols": audit.total_cols,
+        "missing_total": audit.missing_total,
+        "duplicate_rows": audit.duplicate_rows,
+        "duplicate_sample_ids": audit.duplicate_sample_ids,
+        "adl_total_match": audit.adl_total_match,
+        "iadl_total_match": audit.iadl_total_match,
+        "activity_total_match": audit.activity_total_match,
+        "subtype_consistent": audit.subtype_consistent,
+        "raw_constitution_tag_match": audit.raw_constitution_tag_match,
+    }
+    (output_root / "数据核验结果.json").write_text(
+        json.dumps(audit_payload, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+    problem_1["consensus"].to_csv(
+        problem1_dir / "问题一_主分析综合排序.csv", index=False, encoding="utf-8-sig"
+    )
+    problem_1["item_sensitivity"].to_csv(
+        problem1_dir / "问题一_子题敏感性排序.csv", index=False, encoding="utf-8-sig"
+    )
+    problem_1["tag_summary"].to_csv(
+        problem1_dir / "问题一_主导体质分组统计.csv", index=False, encoding="utf-8-sig"
+    )
+    problem_1["constitution_ame"].to_csv(
+        problem1_dir / "问题一_体质边际效应贡献.csv", index=False, encoding="utf-8-sig"
+    )
+
+    metrics_payload = {
+        "diagnostic_auc": problem_2["diagnostic_auc"],
+        "diagnostic_acc": problem_2["diagnostic_acc"],
+        "early_warning_auc": problem_2["ew_auc"],
+        "early_warning_acc": problem_2["ew_acc"],
+        "high_risk_base_rate": problem_2["high_risk_base_rate"],
+        "winsor_lower_q": problem_2["preprocessor"].lower_q,
+        "winsor_upper_q": problem_2["preprocessor"].upper_q,
+        "winsor_columns": MODELING_WINSOR_COLS,
+    }
+    (problem2_dir / "问题二_模型指标.json").write_text(
+        json.dumps(metrics_payload, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    problem_2["diagnostic_importance"].to_csv(
+        problem2_dir / "问题二_诊断模型特征重要性.csv", index=False, encoding="utf-8-sig"
+    )
+    problem_2["ew_importance"].to_csv(
+        problem2_dir / "问题二_早预警模型特征重要性.csv", index=False, encoding="utf-8-sig"
+    )
+    problem_2["risk_counts"].to_csv(
+        problem2_dir / "问题二_风险等级统计.csv", index=False, encoding="utf-8-sig"
+    )
+    problem_2["risk_profile"].to_csv(
+        problem2_dir / "问题二_样本风险画像.csv", index=False, encoding="utf-8-sig"
+    )
+    problem_2["combo_pairs"].to_csv(
+        problem2_dir / "问题二_高风险二项组合.csv", index=False, encoding="utf-8-sig"
+    )
+    problem_2["combo_triples"].to_csv(
+        problem2_dir / "问题二_高风险三项组合.csv", index=False, encoding="utf-8-sig"
+    )
+    problem_2["combo_all"].to_csv(
+        problem2_dir / "问题二_全部组合结果.csv", index=False, encoding="utf-8-sig"
+    )
+    (problem2_dir / "问题二_分层规则树.txt").write_text(problem_2["rule_tree_text"], encoding="utf-8")
+    if problem_2["rule_driven_pair"] is not None:
+        (problem2_dir / "问题二_规则驱动组合.json").write_text(
+            json.dumps(problem_2["rule_driven_pair"], ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+
+    report_figure_dir = Path(__file__).resolve().parents[2] / "论文" / "Figures"
+    if report_figure_dir.exists():
+        figure_dir = problem2_dir / "figures"
+        figure_dir.mkdir(parents=True, exist_ok=True)
+        for name in [
+            "q2_roc_curve.png",
+            "q2_diag_importance.png",
+            "q2_ew_importance.png",
+            "q2_diag_shap_beeswarm.png",
+            "q2_ew_shap_beeswarm.png",
+            "q2_ew_shap_waterfall.png",
+            "q2_combo_patterns.png",
+            "q2_model_visuals.png",
+        ]:
+            src = report_figure_dir / name
+            if src.exists():
+                target_name = {
+                    "q2_roc_curve.png": "问题二_ROC曲线.png",
+                    "q2_diag_importance.png": "问题二_诊断模型重要性图.png",
+                    "q2_ew_importance.png": "问题二_早预警模型重要性图.png",
+                    "q2_diag_shap_beeswarm.png": "问题二_诊断模型SHAP汇总图.png",
+                    "q2_ew_shap_beeswarm.png": "问题二_早预警模型SHAP汇总图.png",
+                    "q2_ew_shap_waterfall.png": "问题二_早预警模型SHAP瀑布图.png",
+                    "q2_combo_patterns.png": "问题二_高风险组合图.png",
+                    "q2_model_visuals.png": "问题二_模型综合可视化.png",
+                }[name]
+                shutil.copy2(src, figure_dir / target_name)
+
+    plan_rows: list[dict[str, object]] = []
+    monthly_rows: list[dict[str, object]] = []
+    for result in problem_3_results:
+        segments = summarize_plan_segments(result)
+        plan_rows.append(
+            {
+                "sample_id": result.sample_id,
+                "age_group": result.age_group,
+                "activity_total": result.activity_total,
+                "baseline_score": result.baseline_score,
+                "target_score": result.target_score,
+                "final_score": round(result.final_score, 6),
+                "total_cost": round(result.total_cost, 2),
+                "meets_target": result.meets_target,
+                "plan_segments": "; ".join(
+                    f"{seg['label']}:({seg['intensity']},{seg['frequency']})" for seg in segments
+                ),
+            }
+        )
+        for seg in segments:
+            monthly_rows.append(
+                {
+                    "sample_id": result.sample_id,
+                    "row_type": "segment",
+                    "month": None,
+                    "month_from": seg["month_from"],
+                    "month_to": seg["month_to"],
+                    "intensity": seg["intensity"],
+                    "frequency": seg["frequency"],
+                    "tcm_level": None,
+                    "start_score": None,
+                    "end_score": None,
+                    "tcm_cost": None,
+                    "train_cost": None,
+                }
+            )
+        for record in result.monthly_records:
+            monthly_rows.append(
+                {
+                    "sample_id": result.sample_id,
+                    "row_type": "month",
+                    "month": record.month,
+                    "month_from": record.month,
+                    "month_to": record.month,
+                    "intensity": record.intensity,
+                    "frequency": record.frequency,
+                    "tcm_level": record.tcm_level,
+                    "start_score": record.start_score,
+                    "end_score": record.end_score,
+                    "tcm_cost": record.tcm_cost,
+                    "train_cost": record.train_cost,
+                }
+            )
+
+    pd.DataFrame(plan_rows).to_csv(
+        problem3_dir / "问题三_样本方案汇总.csv", index=False, encoding="utf-8-sig"
+    )
+    pd.DataFrame(monthly_rows).to_csv(
+        problem3_dir / "问题三_逐月执行明细.csv", index=False, encoding="utf-8-sig"
+    )
+
+    readme = """# C题输出结果说明
+
+- `数据核验结果.json`: 数据核验结果
+- `problem1/`: 问题一的综合排序、体质分组和 AME 结果
+- `problem2/`: 问题二的模型指标、风险分层、组合模式和图像副本
+- `problem3/`: 问题三的样本方案汇总与逐月明细
+"""
+    (output_root / "输出说明.md").write_text(readme, encoding="utf-8")
 
 
 def main() -> None:
@@ -971,6 +1369,12 @@ def main() -> None:
         default=[1, 2, 3],
         help="Sample IDs for the intervention section.",
     )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=Path(__file__).resolve().parent.parent / "outputs",
+        help="Directory for exported problem outputs.",
+    )
     args = parser.parse_args()
 
     workbook = args.xlsx or find_default_xlsx(Path.cwd())
@@ -982,10 +1386,13 @@ def main() -> None:
 
     problem_1 = summarize_problem_1(df)
     problem_2 = fit_risk_models(df)
+    problem_3_results = collect_problem_3_results(df, args.sample_ids, args.target_ratio, args.budget)
 
     print_problem_1(problem_1)
     print_problem_2(problem_2, df)
     print_problem_3(df, args.sample_ids, args.target_ratio, args.budget)
+    export_problem_outputs(workbook, audit, problem_1, problem_2, problem_3_results, args.output_dir)
+    print(f"\nExported outputs to: {args.output_dir}")
 
 
 if __name__ == "__main__":
