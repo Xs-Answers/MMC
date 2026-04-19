@@ -94,7 +94,7 @@
 % \RequirePackage{mathrsfs}%\mathscr{}调用傅里叶变换,拉普拉斯变换的符号
 
 % 加载物理、国标宏包
-\RequirePackage{physics,siunitx}
+\RequirePackage{siunitx,physics}
 
 % 设置虚数,自然底数,微分符号
 \def\ee{\mathrm{e}}

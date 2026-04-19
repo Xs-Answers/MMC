@@ -1,7 +1,11 @@
 % !TeX program = xelatex
 % !TeX encoding = UTF-8
+% !TeX root = c_report.tex
+% Force diagnostic reparse
 \documentclass{MathorCupmodeling}
 \usepackage{float}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+\setcitestyle{numbers}
 \bianhao{MC2607188}
 \tihao{C}
 \timu{中老年人群高血脂症的风险预警及干预方案优化}
@@ -511,7 +515,7 @@
 
 		表 \ref{tab:q2_combo} 说明，高风险样本并不是由某一个单指标单独驱动的，而是主要表现为“血脂异常 + 代谢异常 + 行为/功能风险”的叠加结构。其中，“血脂异常 + 尿酸偏高”以及“血脂异常 + 尿酸偏高 + 低活动量”具有很高的置信度和提升度，说明尿酸异常在高风险识别中具有很强的协同放大作用；“血脂异常 + 吸烟/饮酒史”及其与低活动量的扩展组合则反映了生活方式风险的叠加效应。
 
-		需要特别说明的是，组合“血脂异常 + 痰湿积分高”虽然在样例中对应 $110$ 个高风险样本，且置信度达到 $1.000$、提升度达到 $1.541$，但这与式(\ref{eq:risk_rule}) 已将“血脂异常 + 痰湿积分高”直接纳入高风险条件有关。因此，它更适合作为\textbf{规则驱动的确定性识别模式}来解释，而不宜与上述高频组合一并视作完全独立的数据发掘结果。
+		需要特别说明的是，组合“血脂异常 + 痰湿积分高”虽然在样例中对应 $110$ 个高风险样本，且置信度达到 $1.000$、提升度达到 $1.541$，但这与式(\ref{eq:risk_rule}) 已将“血脂异常 + 痰湿积分高”直接纳入高风险条件有关。因此，它更适合作为{\heiti 规则驱动的确定性识别模式}来解释，而不宜与上述高频组合一并视作完全独立的数据发掘结果。
 
 		\begin{figure}[H]
 			\centering
@@ -649,12 +653,12 @@
 		\phantomsection
 	\addcontentsline{toc}{section}{参考文献}
 		\begin{thebibliography}{99}
-			\bibitem{ref1} 2026 年第十六届 MathorCup 数学应用挑战赛 C 题：中老年人群高血脂症的风险预警及干预方案优化.
-			\bibitem{ref2} Breiman L. Random Forests[J]. Machine Learning, 2001, 45(1): 5-32.
-			\bibitem{ref3} Hastie T, Tibshirani R, Friedman J. The Elements of Statistical Learning[M]. New York: Springer, 2009.
-			\bibitem{ref4} Bishop C M. Pattern Recognition and Machine Learning[M]. New York: Springer, 2006.
-			\bibitem{ref5} 朱燕波, 丛建妮, 史会梅. 3 个不同条目版本中医体质量表的最小临床重要差值研究[J]. 北京中医药大学学报, 2023, 46(5).
-			\bibitem{ref6} GB/T 46939---2025. 中医体质分类与判定[S]. 2025.
+			\bibitem[1]{ref1} 2026 年第十六届 MathorCup 数学应用挑战赛 C 题：中老年人群高血脂症的风险预警及干预方案优化.
+			\bibitem[2]{ref2} Breiman L. Random Forests[J]. Machine Learning, 2001, 45(1): 5-32.
+			\bibitem[3]{ref3} Hastie T, Tibshirani R, Friedman J. The Elements of Statistical Learning[M]. New York: Springer, 2009.
+			\bibitem[4]{ref4} Bishop C M. Pattern Recognition and Machine Learning[M]. New York: Springer, 2006.
+			\bibitem[5]{ref5} 朱燕波, 丛建妮, 史会梅. 3 个不同条目版本中医体质量表的最小临床重要差值研究[J]. 北京中医药大学学报, 2023, 46(5).
+			\bibitem[6]{ref6} GB/T 46939---2025. 中医体质分类与判定[S]. 2025.
 		\end{thebibliography}
 
 	\newpage
