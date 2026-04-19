@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fd377c7c-2924-43d1-bae9-e76a60b9e7a2" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mathmathor cup.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mathmathor cup.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mm_c/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mm_c/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mm_c/data_io.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mm_c/preprocess.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mm_c/problem1_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mm_c/problem2_risk.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mm_c/problem2_rules.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mm_c/problem3_optimize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mm_c/reporting.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/MathorCup_C_详细总结报告.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/figures/problem2_risk_level_counts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/figures/problem2_roc_curve.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/figures/problem2_top10_feature_importance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/figures/problem3_cost_distribution.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/figures/problem3_intensity_frequency_heatmap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/figures/problem3_score_drop_ratio_distribution.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem1_3_key_results.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem1_constitution_or.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem1_constitution_shap.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem1_feature_importance.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem1_group_tests.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem1_spearman.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem1_top_summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem2_association_rules.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem2_feature_importance.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem2_risk_predictions.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem2_summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem3_all_phlegm_patients_best_plan.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/problem3_id_1_2_3_best_plan.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/step1_clean_report.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/step1_cleaned_dataset.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/tables/problem2_risk_level_table.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/tables/problem2_top_rules_table.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/tables/problem3_agegroup_plan_table.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/tables/problem3_id_1_2_3_table.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/tables/problem3_plan_summary_table.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/run_all.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/run_step1_preprocess.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/run_step2_problem1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/run_step3_problem2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/run_step4_problem3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/run_step5_report.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_constraints.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_smoke.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/Answers/Desktop/mathmathor cup" value="3CTngtw1DboU8AgyXZOa0C4EgpQ" />
+    </persistenceIdMap>
+  </component>
+  <component name="CopilotUserSelectedModel">
+    <selectedModels>
+      <entry key="chat-panel" value="Gemini 3.1 Pro" />
+      <entry key="agent-panel" value="Gemini 3.1 Pro" />
+    </selectedModels>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="44" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/MathorCup" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3CTngtw1DboU8AgyXZOa0C4EgpQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.29346.308" />
+        <option value="bundled-python-sdk-ca5e2b39c7df-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.308" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="fd377c7c-2924-43d1-bae9-e76a60b9e7a2" name="更改" comment="" />
+      <created>1776418542728</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776418542728</updated>
+      <workItem from="1776418546289" duration="1156000" />
+      <workItem from="1776511164892" duration="188000" />
+      <workItem from="1776511373391" duration="373000" />
+      <workItem from="1776511770525" duration="295000" />
+      <workItem from="1776512078987" duration="1976000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
