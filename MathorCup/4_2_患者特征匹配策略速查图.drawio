@@ -1,0 +1,96 @@
+<mxfile host="Electron" modified="2024-01-01T12:00:00.000Z" agent="Mozilla/5.0" version="21.0.0" type="device">
+  <diagram id="heatmap" name="速查图">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 标题 -->
+        <mxCell id="title" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;患者特征匹配干预策略速查热力矩阵&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="400" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- X轴和Y轴标签 -->
+        <mxCell id="xlabel_title" value="&lt;b&gt;活动总分评价区间&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="400" y="650" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ylabel_title" value="&lt;b&gt;初&lt;br&gt;始&lt;br&gt;痰&lt;br&gt;湿&lt;br&gt;积&lt;br&gt;分&lt;br&gt;区&lt;br&gt;间&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="50" y="320" width="40" height="150" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="x_label_0" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;40 严重受限&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="110" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x_label_1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;40~60 中度&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="110" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x_label_2" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&gt;=60 优良&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="110" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="y_label_0" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;三级 (极高)&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="150" width="120" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="y_label_1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;二级 (中度)&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="300" width="120" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="y_label_2" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;一级 (轻度)&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="450" width="120" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="rect_0_0" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ff6666;strokeColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="200" y="150" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="shape_0_0" value="&lt;b&gt;强烈(u5)&lt;br&gt;频次5&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#444444&quot; size=&quot;1&quot;&gt;(预估总成本: 1800元)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=90;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="215.0" y="170.0" width="190.0" height="110.0" as="geometry" />
+        </mxCell>
+        <mxCell id="rect_0_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ff9966;strokeColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="420" y="150" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="shape_0_1" value="&lt;b&gt;强干预(u4)&lt;br&gt;频次4&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#444444&quot; size=&quot;1&quot;&gt;(预估总成本: 1500元)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=90;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="441.9230769230769" y="174.6153846153846" width="176.15384615384616" height="100.76923076923077" as="geometry" />
+        </mxCell>
+        <mxCell id="rect_0_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffcc66;strokeColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="640" y="150" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="shape_0_2" value="&lt;b&gt;中干预(u3)&lt;br&gt;频次4&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#444444&quot; size=&quot;1&quot;&gt;(预估总成本: 1200元)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=90;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="668.8461538461538" y="179.23076923076923" width="162.30769230769232" height="91.53846153846153" as="geometry" />
+        </mxCell>
+        <mxCell id="rect_1_0" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ff9966;strokeColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="200" y="300" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="shape_1_0" value="&lt;b&gt;强干预(u4)&lt;br&gt;频次5&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#444444&quot; size=&quot;1&quot;&gt;(预估总成本: 1600元)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=90;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="219.6153846153846" y="323.0769230769231" width="180.76923076923077" height="103.84615384615384" as="geometry" />
+        </mxCell>
+        <mxCell id="rect_1_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffcc66;strokeColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="420" y="300" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="shape_1_1" value="&lt;b&gt;中强(u3)&lt;br&gt;频次3&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#444444&quot; size=&quot;1&quot;&gt;(预估总成本: 1200元)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=90;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="448.8461538461538" y="329.2307692307692" width="162.30769230769232" height="91.53846153846153" as="geometry" />
+        </mxCell>
+        <mxCell id="rect_1_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffff99;strokeColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="640" y="300" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="shape_1_2" value="&lt;b&gt;常规(u2)&lt;br&gt;频次3&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#444444&quot; size=&quot;1&quot;&gt;(预估总成本: 900元)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=90;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="675.7692307692307" y="333.84615384615387" width="148.46153846153845" height="82.3076923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="rect_2_0" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffcc66;strokeColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="200" y="450" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="shape_2_0" value="&lt;b&gt;中强(u3)&lt;br&gt;频次3&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#444444&quot; size=&quot;1&quot;&gt;(预估总成本: 1200元)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=90;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="228.84615384615384" y="479.2307692307692" width="162.30769230769232" height="91.53846153846153" as="geometry" />
+        </mxCell>
+        <mxCell id="rect_2_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffff99;strokeColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="420" y="450" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="shape_2_1" value="&lt;b&gt;常规(u2)&lt;br&gt;频次2&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#444444&quot; size=&quot;1&quot;&gt;(预估总成本: 900元)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=90;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="455.7692307692308" y="483.84615384615387" width="148.46153846153845" height="82.3076923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="rect_2_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ccffcc;strokeColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="640" y="450" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="shape_2_2" value="&lt;b&gt;轻微(u1)&lt;br&gt;频次1&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#444444&quot; size=&quot;1&quot;&gt;(预估总成本: 500元)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=90;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="685.0" y="490.0" width="130.0" height="70.0" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

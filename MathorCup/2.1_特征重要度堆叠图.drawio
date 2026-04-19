@@ -1,0 +1,167 @@
+<mxfile host="Electron" modified="2024-04-18T00:00:00.000Z" agent="Mozilla/5.0" version="21.6.8" type="device">
+  <diagram id="mathorcup_feature_importance" name="多维度特征重要度">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="960" pageHeight="600" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 外层边框 -->
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="920" height="560" as="geometry" />
+        </mxCell>
+
+        <!-- 标题 -->
+        <mxCell id="title" value="&lt;b style=&quot;font-size: 18px; color: #333;&quot;&gt;图 2.1：候选指标多维度特征重要度展示与综合得分 ($S_j$) 分布&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="210" y="40" width="540" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 左下侧的计算公式面板 -->
+        <mxCell id="formula_panel" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4F8FB;strokeColor=#A5C2E0;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="380" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="formula_title" value="&lt;b&gt;综合评价得分计算机制 (Ensemble Scoring)&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#2B579A;" vertex="1" parent="1">
+          <mxGeometry x="50" y="450" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="formula_text" value="$$S_j = \sum_{k=1}^{5} w_k \cdot \text{Score}_{k,j}$$&lt;br&gt;&lt;font size=&quot;1&quot; color=&quot;#555555&quot;&gt;其中 $w_k$ 为各维度权重，$\text{Score}_{k,j}$ 为第 $j$ 个指标在第 $k$ 种算法下归一化后的得分。&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="45" y="480" width="370" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 图例 (Legend) -->
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#DDDDDD;" vertex="1" parent="1">
+          <mxGeometry x="660" y="440" width="260" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" value="&lt;b style=&quot;font-size:12px;color:#555;&quot;&gt;评价视角 (Evaluation Perspectives)&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="670" y="445" width="210" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- 图例项 1 Spearman -->
+        <mxCell id="l1_color" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4B74B1;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="680" y="480" width="15" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="l1_text" value="Spearman 相关系数" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="700" y="475" width="130" height="30" as="geometry" />
+        </mxCell>
+        <!-- 图例项 2 MI-回归 -->
+        <mxCell id="l2_color" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E18942;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="680" y="505" width="15" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="l2_text" value="MI-回归 (互信息)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="700" y="500" width="110" height="30" as="geometry" />
+        </mxCell>
+        <!-- 图例项 3 MI-分类 -->
+        <mxCell id="l3_color" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A1A0A0;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="680" y="530" width="15" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="l3_text" value="MI-分类 (互信息)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="700" y="525" width="110" height="30" as="geometry" />
+        </mxCell>
+        <!-- 图例项 4 RF-回归 -->
+        <mxCell id="l4_color" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3C144;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="810" y="480" width="15" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="l4_text" value="RF-回归重要度" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="830" y="475" width="100" height="30" as="geometry" />
+        </mxCell>
+        <!-- 图例项 5 RF-分类 -->
+        <mxCell id="l5_color" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#5E99C9;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="810" y="505" width="15" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="l5_text" value="RF-分类重要度" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#333;" vertex="1" parent="1">
+          <mxGeometry x="830" y="500" width="100" height="30" as="geometry" />
+        </mxCell>
+
+
+        <!-- 图表主体背景线 -->
+        <mxCell id="grid1" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#E0E0E0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="320" y="400" as="sourcePoint" /><mxPoint x="320" y="90" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="grid2" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#E0E0E0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="470" y="400" as="sourcePoint" /><mxPoint x="470" y="90" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="grid3" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#E0E0E0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="620" y="400" as="sourcePoint" /><mxPoint x="620" y="90" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="grid4" value="" style="endArrow=none;dashed=1;html=1;strokeColor=#E0E0E0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="770" y="400" as="sourcePoint" /><mxPoint x="770" y="90" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <!-- 坐标轴 -->
+        <mxCell id="axis_x" value="" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="170" y="400" as="sourcePoint" /><mxPoint x="880" y="400" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="axis_y" value="" style="endArrow=classic;html=1;strokeColor=#333333;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="170" y="400" as="sourcePoint" /><mxPoint x="170" y="80" as="targetPoint" /></mxGeometry>
+        </mxCell>
+
+        <mxCell id="label_x" value="综合得分 $S_j$" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#333;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="405" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 坐标轴刻度标签 -->
+        <mxCell id="tick0" value="0.0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666;" vertex="1" parent="1"><mxGeometry x="155" y="405" width="30" height="30" as="geometry" /></mxCell>
+        <mxCell id="tick1" value="0.2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666;" vertex="1" parent="1"><mxGeometry x="305" y="405" width="30" height="30" as="geometry" /></mxCell>
+        <mxCell id="tick2" value="0.4" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666;" vertex="1" parent="1"><mxGeometry x="455" y="405" width="30" height="30" as="geometry" /></mxCell>
+        <mxCell id="tick3" value="0.6" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666;" vertex="1" parent="1"><mxGeometry x="605" y="405" width="30" height="30" as="geometry" /></mxCell>
+        <mxCell id="tick4" value="0.8" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;fontColor=#666;" vertex="1" parent="1"><mxGeometry x="755" y="405" width="30" height="30" as="geometry" /></mxCell>
+
+        <!-- ================= 数据柱状图 ================= -->
+        <!-- Y轴标签 -->
+        <mxCell id="ylabel1" value="TG (甘油三酯)" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#000;" vertex="1" parent="1"><mxGeometry x="60" y="105" width="100" height="30" as="geometry" /></mxCell>
+        <mxCell id="ylabel2" value="BMI (体质指数)" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#000;" vertex="1" parent="1"><mxGeometry x="60" y="155" width="110" height="30" as="geometry" /></mxCell>
+        <mxCell id="ylabel3" value="活动受限总分" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontColor=#000;" vertex="1" parent="1"><mxGeometry x="60" y="205" width="100" height="30" as="geometry" /></mxCell>
+        <mxCell id="ylabel4" value="TC (总胆固醇)" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#333;" vertex="1" parent="1"><mxGeometry x="60" y="255" width="100" height="30" as="geometry" /></mxCell>
+        <mxCell id="ylabel5" value="血尿酸" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#333;" vertex="1" parent="1"><mxGeometry x="100" y="305" width="60" height="30" as="geometry" /></mxCell>
+        <mxCell id="ylabel6" value="HDL-C" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#333;" vertex="1" parent="1"><mxGeometry x="100" y="355" width="60" height="30" as="geometry" /></mxCell>
+
+        <!-- 第1柱 TG (长度极高) -->
+        <mxCell id="bar1_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4B74B1;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="171" y="110" width="140" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar1_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E18942;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="311" y="110" width="120" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar1_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A1A0A0;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="431" y="110" width="110" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar1_4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3C144;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="541" y="110" width="160" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar1_5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#5E99C9;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="701" y="110" width="140" height="20" as="geometry" /></mxCell>
+        <!-- 总分文本 -->
+        <mxCell id="score1" value="&lt;b&gt;0.88&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#C00000;" vertex="1" parent="1"><mxGeometry x="845" y="105" width="40" height="30" as="geometry" /></mxCell>
+
+        <!-- 第2柱 BMI -->
+        <mxCell id="bar2_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4B74B1;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="171" y="160" width="110" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar2_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E18942;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="281" y="160" width="130" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar2_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A1A0A0;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="411" y="160" width="100" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar2_4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3C144;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="511" y="160" width="140" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar2_5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#5E99C9;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="651" y="160" width="110" height="20" as="geometry" /></mxCell>
+        <mxCell id="score2" value="&lt;b&gt;0.78&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#C00000;" vertex="1" parent="1"><mxGeometry x="765" y="155" width="40" height="30" as="geometry" /></mxCell>
+
+        <!-- 第3柱 活动受限 -->
+        <mxCell id="bar3_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4B74B1;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="171" y="210" width="80" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar3_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E18942;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="251" y="210" width="100" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar3_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A1A0A0;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="351" y="210" width="120" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar3_4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3C144;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="471" y="210" width="110" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar3_5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#5E99C9;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="581" y="210" width="140" height="20" as="geometry" /></mxCell>
+        <mxCell id="score3" value="&lt;b&gt;0.71&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#C00000;" vertex="1" parent="1"><mxGeometry x="725" y="205" width="40" height="30" as="geometry" /></mxCell>
+
+        <!-- 第4柱 TC -->
+        <mxCell id="bar4_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4B74B1;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="171" y="260" width="120" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar4_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E18942;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="291" y="260" width="90" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar4_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A1A0A0;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="381" y="260" width="80" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar4_4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3C144;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="461" y="260" width="100" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar4_5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#5E99C9;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="561" y="260" width="80" height="20" as="geometry" /></mxCell>
+        <mxCell id="score4" value="0.60" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#333;" vertex="1" parent="1"><mxGeometry x="645" y="255" width="40" height="30" as="geometry" /></mxCell>
+
+        <!-- 第5柱 血尿酸 -->
+        <mxCell id="bar5_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4B74B1;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="171" y="310" width="90" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar5_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E18942;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="261" y="310" width="80" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar5_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A1A0A0;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="341" y="310" width="60" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar5_4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3C144;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="401" y="310" width="80" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar5_5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#5E99C9;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="481" y="310" width="60" height="20" as="geometry" /></mxCell>
+        <mxCell id="score5" value="0.48" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#333;" vertex="1" parent="1"><mxGeometry x="545" y="305" width="40" height="30" as="geometry" /></mxCell>
+
+        <!-- 第6柱 HDL-C -->
+        <mxCell id="bar6_1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4B74B1;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="171" y="360" width="70" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar6_2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E18942;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="241" y="360" width="70" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar6_3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A1A0A0;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="311" y="360" width="60" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar6_4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3C144;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="371" y="360" width="50" height="20" as="geometry" /></mxCell>
+        <mxCell id="bar6_5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#5E99C9;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="421" y="360" width="50" height="20" as="geometry" /></mxCell>
+        <mxCell id="score6" value="0.38" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#333;" vertex="1" parent="1"><mxGeometry x="475" y="355" width="40" height="30" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

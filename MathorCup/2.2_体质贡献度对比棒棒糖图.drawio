@@ -1,0 +1,95 @@
+<mxfile host="Electron" modified="2024-04-18T00:00:00.000Z" agent="Mozilla/5.0" version="21.6.8" type="device">
+  <diagram id="mathorcup_lollipop_chart" name="九种体质贡献度对比棒棒糖图">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="960" pageHeight="600" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 外层边框 -->
+        <mxCell id="bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#E0E0E0;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="920" height="560" as="geometry" />
+        </mxCell>
+
+        <!-- 标题 -->
+        <mxCell id="title" value="&lt;b style=&quot;font-size: 18px; color: #333;&quot;&gt;图 2.2：九种体质模型化边际效应(AME)与风险贡献占比对比&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="190" y="40" width="560" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Y轴体质标签 -->
+        <mxCell id="yt_1" value="气虚质" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=14;fontColor=#333;" vertex="1" parent="1"><mxGeometry x="380" y="105" width="70" height="30" as="geometry" /></mxCell>
+        <mxCell id="yt_2" value="平和质" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=14;fontColor=#333;" vertex="1" parent="1"><mxGeometry x="380" y="155" width="70" height="30" as="geometry" /></mxCell>
+        <mxCell id="yt_3" value="血瘀质" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#444;" vertex="1" parent="1"><mxGeometry x="380" y="205" width="70" height="30" as="geometry" /></mxCell>
+        <mxCell id="yt_4" value="湿热质" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#444;" vertex="1" parent="1"><mxGeometry x="380" y="255" width="70" height="30" as="geometry" /></mxCell>
+        <mxCell id="yt_5" value="阳虚质" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#555;" vertex="1" parent="1"><mxGeometry x="385" y="305" width="60" height="30" as="geometry" /></mxCell>
+        <mxCell id="yt_6" value="阴虚质" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#555;" vertex="1" parent="1"><mxGeometry x="385" y="355" width="60" height="30" as="geometry" /></mxCell>
+        <mxCell id="yt_7" value="气郁质" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#555;" vertex="1" parent="1"><mxGeometry x="385" y="405" width="60" height="30" as="geometry" /></mxCell>
+        <mxCell id="yt_8" value="特禀质" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#666;" vertex="1" parent="1"><mxGeometry x="385" y="455" width="60" height="30" as="geometry" /></mxCell>
+        <mxCell id="yt_9" value="痰湿质" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#777;" vertex="1" parent="1"><mxGeometry x="385" y="505" width="60" height="30" as="geometry" /></mxCell>
+
+        <!-- 纵向 0 中轴线 -->
+        <mxCell id="axis_0" value="" style="endArrow=none;html=1;strokeColor=#444444;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="480" y="560" as="sourcePoint" /><mxPoint x="480" y="90" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="ax_label_0" value="0.0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#333;" vertex="1" parent="1"><mxGeometry x="465" y="555" width="40" height="30" as="geometry" /></mxCell>
+
+        <!-- 横向 X 轴底部线 -->
+        <mxCell id="axis_x" value="" style="endArrow=classic;html=1;strokeColor=#999999;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="100" y="540" as="sourcePoint" /><mxPoint x="860" y="540" as="targetPoint" /></mxGeometry>
+        </mxCell>
+        <mxCell id="label_x" value="模型化边际效应(AME)&amp;nbsp; &amp;lt;— 保护因素 (负相关) | 危险因素 (正相关) —&amp;gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#333;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="540" width="460" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 棒轴 1 气虚质 (+0.28) -->
+        <mxCell id="line1" value="" style="endArrow=none;html=1;strokeColor=#D35400;strokeWidth=5;alpha=0.8;" edge="1" parent="1"><mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="480" y="120" as="sourcePoint" /><mxPoint x="760" y="120" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="dot1" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#D35400;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="760" y="110" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="text1" value="&lt;b style=&quot;color:#D35400;font-size:12px&quot;&gt;+0.28 &lt;br&gt;(25%)&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;" vertex="1" parent="1"><mxGeometry x="785" y="105" width="60" height="30" as="geometry" /></mxCell>
+
+        <!-- 棒轴 2 平和质 (+0.22) -->
+        <mxCell id="line2" value="" style="endArrow=none;html=1;strokeColor=#D35400;strokeWidth=5;alpha=0.8;" edge="1" parent="1"><mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="480" y="170" as="sourcePoint" /><mxPoint x="700" y="170" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="dot2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#D35400;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="700" y="160" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="text2" value="&lt;b style=&quot;color:#D35400;font-size:12px&quot;&gt;+0.22 &lt;br&gt;(20%)&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;" vertex="1" parent="1"><mxGeometry x="725" y="155" width="60" height="30" as="geometry" /></mxCell>
+
+        <!-- 棒轴 3 血瘀质 (-0.19) -->
+        <mxCell id="line3" value="" style="endArrow=none;html=1;strokeColor=#2980B9;strokeWidth=5;alpha=0.8;" edge="1" parent="1"><mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="480" y="220" as="sourcePoint" /><mxPoint x="290" y="220" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="dot3" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#2980B9;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="270" y="210" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="text3" value="&lt;b style=&quot;color:#2980B9;font-size:12px&quot;&gt;-0.19 &lt;br&gt;(18%)&lt;/b&gt;" style="text;html=1;align=right;verticalAlign=middle;resizable=0;" vertex="1" parent="1"><mxGeometry x="205" y="205" width="60" height="30" as="geometry" /></mxCell>
+
+        <!-- 棒轴 4 湿热质 (-0.14) -->
+        <mxCell id="line4" value="" style="endArrow=none;html=1;strokeColor=#2980B9;strokeWidth=5;alpha=0.8;" edge="1" parent="1"><mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="480" y="270" as="sourcePoint" /><mxPoint x="340" y="270" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="dot4" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#2980B9;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="320" y="260" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="text4" value="&lt;b style=&quot;color:#2980B9;font-size:12px&quot;&gt;-0.14 &lt;br&gt;(12%)&lt;/b&gt;" style="text;html=1;align=right;verticalAlign=middle;resizable=0;" vertex="1" parent="1"><mxGeometry x="255" y="255" width="60" height="30" as="geometry" /></mxCell>
+
+        <!-- 棒轴 5 阳虚质 (+0.09) -->
+        <mxCell id="line5" value="" style="endArrow=none;html=1;strokeColor=#D35400;strokeWidth=5;alpha=0.8;" edge="1" parent="1"><mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="480" y="320" as="sourcePoint" /><mxPoint x="570" y="320" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="dot5" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#D35400;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="570" y="310" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="text5" value="&lt;b style=&quot;color:#D35400;font-size:11px&quot;&gt;+0.09 (8%)&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;" vertex="1" parent="1"><mxGeometry x="595" y="305" width="70" height="30" as="geometry" /></mxCell>
+
+        <!-- 棒轴 6 阴虚质 (+0.06) -->
+        <mxCell id="line6" value="" style="endArrow=none;html=1;strokeColor=#D35400;strokeWidth=5;alpha=0.8;" edge="1" parent="1"><mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="480" y="370" as="sourcePoint" /><mxPoint x="540" y="370" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="dot6" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#D35400;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="540" y="360" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="text6" value="&lt;b style=&quot;color:#D35400;font-size:11px&quot;&gt;+0.06 (6%)&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;" vertex="1" parent="1"><mxGeometry x="565" y="355" width="70" height="30" as="geometry" /></mxCell>
+
+        <!-- 棒轴 7 气郁质 (-0.05) -->
+        <mxCell id="line7" value="" style="endArrow=none;html=1;strokeColor=#2980B9;strokeWidth=5;alpha=0.8;" edge="1" parent="1"><mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="480" y="420" as="sourcePoint" /><mxPoint x="430" y="420" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="dot7" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#2980B9;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="410" y="410" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="text7" value="&lt;b style=&quot;color:#2980B9;font-size:11px&quot;&gt;-0.05 (5%)&lt;/b&gt;" style="text;html=1;align=right;verticalAlign=middle;resizable=0;" vertex="1" parent="1"><mxGeometry x="340" y="405" width="70" height="30" as="geometry" /></mxCell>
+
+        <!-- 棒轴 8 特禀质 (+0.04) -->
+        <mxCell id="line8" value="" style="endArrow=none;html=1;strokeColor=#D35400;strokeWidth=5;alpha=0.8;" edge="1" parent="1"><mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="480" y="470" as="sourcePoint" /><mxPoint x="520" y="470" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="dot8" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#D35400;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="520" y="460" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="text8" value="&lt;b style=&quot;color:#D35400;font-size:11px&quot;&gt;+0.04 (4%)&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;" vertex="1" parent="1"><mxGeometry x="545" y="455" width="70" height="30" as="geometry" /></mxCell>
+
+        <!-- 棒轴 9 痰湿质 (-0.02) -->
+        <mxCell id="line9" value="" style="endArrow=none;html=1;strokeColor=#2980B9;strokeWidth=5;alpha=0.8;" edge="1" parent="1"><mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="480" y="520" as="sourcePoint" /><mxPoint x="460" y="520" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="dot9" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#2980B9;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="440" y="510" width="20" height="20" as="geometry" /></mxCell>
+        <mxCell id="text9" value="&lt;b style=&quot;color:#2980B9;font-size:11px&quot;&gt;-0.02 (2%)&lt;/b&gt;" style="text;html=1;align=right;verticalAlign=middle;resizable=0;" vertex="1" parent="1"><mxGeometry x="370" y="505" width="70" height="30" as="geometry" /></mxCell>
+
+        <!-- 装饰框与图例 -->
+        <mxCell id="leg_high" value="高风险因素 (Positive AME)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#D35400;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="720" y="65" width="170" height="30" as="geometry" /></mxCell>
+        <mxCell id="leg_low" value="保护因素 (Negative AME)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#2980B9;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="75" y="65" width="160" height="30" as="geometry" /></mxCell>
+             
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

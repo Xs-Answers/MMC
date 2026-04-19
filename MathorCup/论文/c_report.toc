@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {一、}问题重述}{1}{section.1}%
+\contentsline {section}{\numberline {二、}数据理解与总体思路}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}数据核验与预处理}{2}{subsection.2.1}%
+\contentsline {section}{\numberline {三、}模型假设}{3}{section.3}%
+\contentsline {section}{\numberline {四、}符号说明}{3}{section.4}%
+\contentsline {section}{\numberline {五、}问题一：关键指标筛选与体质贡献分析}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}双目标筛选思路与评价指标}{4}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}关键指标筛选结果及解释}{5}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}九种体质的风险贡献差异}{7}{subsection.5.3}%
+\contentsline {section}{\numberline {六、}问题二：多维风险预警模型的构建}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}双层风险预警框架}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}三级风险阈值设计}{12}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}高风险核心特征组合识别}{13}{subsection.6.3}%
+\contentsline {section}{\numberline {七、}问题三：痰湿体质患者的六个月干预优化}{13}{section.7}%
+\contentsline {subsection}{\numberline {7.1}决策变量与约束条件}{13}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}样本 1、2、3 的最优方案}{14}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}患者特征与最优方案的匹配规律}{14}{subsection.7.3}%
+\contentsline {section}{\numberline {八、}模型检验与结果讨论}{15}{section.8}%
+\contentsline {section}{\numberline {九、}模型评价与改进方向}{15}{section.9}%
+\contentsline {subsection}{\numberline {9.1}模型优点}{15}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}模型不足}{15}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}改进方向}{16}{subsection.9.3}%
+\contentsline {section}{参考文献}{16}{section*.15}%
+\contentsline {section}{\numberline {附录1：}算法实现说明}{17}{appendix.A}%
+\contentsline {section}{\numberline {附录2：}问题三核心求解伪代码}{17}{appendix.B}%
+\contentsfinish 
