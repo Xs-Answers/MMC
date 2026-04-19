@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.2)  19 APR 2026 23:27
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.2)  19 APR 2026 23:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1151,20 +1151,16 @@ File: Figures/q2_tg_preprocess.png Graphic file (type bmp)
 [4]
 
 [5]
-Underfull \hbox (badness 10000) in alignment at lines 178--178
+Underfull \hbox (badness 10000) in alignment at lines 186--186
 [][][][][][][] 
  []
 
 
 
 [6]
-Underfull \hbox (badness 10000) in alignment at lines 203--203
+Underfull \hbox (badness 10000) in alignment at lines 211--211
 [][][][][][][] 
  []
-
-
-LaTeX Warning: Reference `tab:q1_item_alt' on page 7 undefined on input line 20
-6.
 
 
 
@@ -1178,20 +1174,12 @@ File: Figures/q1_constitution_ame_visual.png Graphic file (type bmp)
 
 
 [10]
-
-LaTeX Warning: Reference `fig:q2_framework' on page 11 undefined on input line 
-317.
-
 File: Figures/q2_roc_curve.png Graphic file (type bmp)
 <Figures/q2_roc_curve.png>
 
 
 [11]
-
-LaTeX Warning: Reference `fig:q2_roc' on page 12 undefined on input line 356.
-
-
-Overfull \hbox (20.22766pt too wide) in paragraph at lines 358--359
+Overfull \hbox (20.22766pt too wide) in paragraph at lines 366--367
 []\TU/SimSun(1)/m/n/12.045 基 于 特 征 重 要 度，|  诊 断 型 模 型 的 前 五 位 变 量 为 \TU/TimesNe
 wRoman(0)/m/n/12.045 non-HDL-C\TU/SimSun(1)/m/n/12.045 、| $[][][]$、| $[][][]$、|
 
@@ -1204,17 +1192,6 @@ File: Figures/q2_ew_importance.png Graphic file (type bmp)
 
 
 [12]
-
-LaTeX Warning: Reference `fig:q2_importance' on page 13 undefined on input line
- 388.
-
-
-Overfull \hbox (7.62663pt too wide) in paragraph at lines 388--389
-\TU/SimSun(1)/m/n/12.045 图 进 一 步 说 明，|  两 类 模 型 依 赖 的 信 号 并 不 相 同：|  诊 断 型 模 型 
-主 要 由 \TU/TimesNewRoman(0)/m/n/12.045 non-HDL-C\TU/SimSun(1)/m/n/12.045 、| $[][
-][]$
- []
-
 File: Figures/q2_diag_shap_beeswarm.png Graphic file (type bmp)
 <Figures/q2_diag_shap_beeswarm.png>
 File: Figures/q2_ew_shap_beeswarm.png Graphic file (type bmp)
@@ -1222,20 +1199,11 @@ File: Figures/q2_ew_shap_beeswarm.png Graphic file (type bmp)
 
 
 [13]
-
-LaTeX Warning: Reference `fig:q2_diag_shap' on page 14 undefined on input line 
-408.
-
 File: Figures/q2_ew_shap_waterfall.png Graphic file (type bmp)
 <Figures/q2_ew_shap_waterfall.png>
 
 
 [14]
-
-LaTeX Warning: Reference `fig:q2_ew_shap_local' on page 15 undefined on input l
-ine 416.
-
-
 
 [15]
 File: Figures/q2_risk_sankey.png Graphic file (type bmp)
@@ -1247,7 +1215,7 @@ File: Figures/q2_risk_sankey.png Graphic file (type bmp)
 [17]
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/b/n' undefined
-(Font)              using `TU/SimSun(1)/m/n' instead on input line 506.
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 514.
 
 File: Figures/q2_combo_patterns.png Graphic file (type bmp)
 <Figures/q2_combo_patterns.png>
@@ -1255,13 +1223,8 @@ File: Figures/q2_combo_patterns.png Graphic file (type bmp)
 
 [18]
 
-LaTeX Warning: Reference `fig:q2_combo_patterns' on page 19 undefined on input 
-line 514.
-
-
-
 [19]
-Underfull \hbox (badness 2762) in paragraph at lines 583--583
+Underfull \hbox (badness 2762) in paragraph at lines 591--591
 []|\TU/TimesNewRoman(0)/m/n/10.53937 1 \TU/SimSun(1)/m/n/10.53937 月：| $\LMS/ntx
 sy/m/n/10.53937 ¹\OT1/TimesNewRoman(0)/m/n/10.53937 2\OML/ntxmi/m/it/10.53937 ;
  \OT1/TimesNewRoman(0)/m/n/10.53937 8\LMS/ntxsy/m/n/10.53937 º$\TU/SimSun(1)/m/
@@ -1270,7 +1233,7 @@ n/10.53937 ；| \TU/TimesNewRoman(0)/m/n/10.53937 2 \TU/SimSun(1)/m/n/10.53937 �
  []
 
 
-Underfull \hbox (badness 2762) in paragraph at lines 583--583
+Underfull \hbox (badness 2762) in paragraph at lines 591--591
 []|\TU/TimesNewRoman(0)/m/n/10.53937 1 \TU/SimSun(1)/m/n/10.53937 月：| $\LMS/ntx
 sy/m/n/10.53937 ¹\OT1/TimesNewRoman(0)/m/n/10.53937 2\OML/ntxmi/m/it/10.53937 ;
  \OT1/TimesNewRoman(0)/m/n/10.53937 8\LMS/ntxsy/m/n/10.53937 º$\TU/SimSun(1)/m/
@@ -1281,20 +1244,16 @@ n/10.53937 ；| \TU/TimesNewRoman(0)/m/n/10.53937 2 \TU/SimSun(1)/m/n/10.53937 �
 
 
 [20]
-File: Figures/q3_patient_paths_placeholder.png Graphic file (type bmp)
-<Figures/q3_patient_paths_placeholder.png>
+File: Figures/4_1_trajectory.png Graphic file (type bmp)
+<Figures/4_1_trajectory.png>
 
 
 [21]
-File: Figures/q3_strategy_heatmap_placeholder.png Graphic file (type bmp)
-<Figures/q3_strategy_heatmap_placeholder.png>
+File: Figures/4_2_heatmap.png Graphic file (type bmp)
+<Figures/4_2_heatmap.png>
 
 
 [22]
-
-LaTeX Warning: Reference `tab:q2_threshold' on page 23 undefined on input line 
-617.
-
 File: Figures/基于风险分层的预警决策模型全图.png Graphic file (type bmp)
 <Figures/基于风险分层的预警决策模型全图.png>
 
@@ -1343,26 +1302,14 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `c_report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `c_report.out':
-(rerunfilecheck)             Before: 60EDA2003ECC722D18413A45315F8B44;3275
-(rerunfilecheck)             After:  25398C85883FFC8AB297AA772CFEFA22;3550.
+Package rerunfilecheck Info: File `c_report.out' has not changed.
+(rerunfilecheck)             Checksum: 25398C85883FFC8AB297AA772CFEFA22;3550.
  ) 
 Here is how much of TeX's memory you used:
- 29636 strings out of 473832
- 641495 string characters out of 5733159
- 1242211 words of memory out of 5000000
- 52251 multiletter control sequences out of 15000+600000
+ 29639 strings out of 473832
+ 641725 string characters out of 5733159
+ 1243212 words of memory out of 5000000
+ 52254 multiletter control sequences out of 15000+600000
  602125 words of font info for 158 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  107i,16n,131p,3283b,1285s stack positions out of 10000i,1000n,20000p,200000b,200000s
